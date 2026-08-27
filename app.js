@@ -1,4 +1,4 @@
-const API = window.VELDERR_API_BASE || 'http://localhost:4000/api';
+const API = window.VELDERR_API_BASE || 'https://velderr-api.onrender.com/api';
 
 // Fallback data so the site still works if the API is unreachable (e.g. static hosting demo).
 const FALLBACK_SERVICES = [
