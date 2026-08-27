@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Velderr Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .admin-shell{max-width:1080px;margin:0 auto;padding:60px 6vw 90px}
+  .login-card{max-width:420px;margin:60px auto;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:var(--shadow)}
+  .login-card .field{margin-bottom:14px}
+  .hint{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.5}
+  .top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .signout{font-size:13px;font-weight:700;color:var(--green2);background:none;border:none;cursor:pointer}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0 40px}
+  .stat-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .stat-card .eyebrow{margin-bottom:6px}
+  .stat-card h3{margin:0;font-family:var(--display);font-size:30px;color:var(--green)}
+  .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:start}
+  .booking-row{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+  .booking-row .ref{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .booking-row h4{margin:6px 0 4px;font-size:16px}
+  .booking-row p{margin:0;font-size:13px;color:var(--muted)}
+  .booking-row select{margin-top:10px;margin-right:8px;font:inherit;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+  .staff-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+  .staff-card b{font-size:14px}
+  .staff-card p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+  .error-banner{background:#FBE9E9;border:1px solid #EFC5C5;color:#7A2020;padding:10px 14px;border-radius:10px;font-size:13px;margin-bottom:16px}
+  @media(max-width:900px){.stat-grid{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">V</span>
+    <span class="brand-text"><b>VELDERR</b><small>Admin Console</small></span>
+  </a>
+  <a href="index.html" style="font-size:13px;font-weight:600;color:var(--green)">← Back to site</a>
+</header>
+
+<main class="admin-shell">
+
+  <section id="login">
+    <div class="login-card">
+      <p class="eyebrow">PRIVATE OPERATIONS</p>
+      <h1 style="font-family:var(--display);font-weight:400;font-size:34px;margin:0 0 20px">Admin sign in</h1>
+      <div id="loginError" class="error-banner" hidden></div>
+      <form id="loginForm">
+        <div class="field"><label for="email">Email</label><input id="email" type="email" required autocomplete="username"></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" required autocomplete="current-password"></div>
+        <button class="btn primary full" type="submit">Sign in</button>
+      </form>
+      <p class="hint">Demo credentials: <b>admin@velderr.com</b> / <b>VelderrMVP!2026</b> — change these before going live (see README).</p>
+    </div>
+  </section>
+
+  <section id="dash" hidden>
+    <div class="top-row">
+      <div>
+        <p class="eyebrow" style="margin-bottom:4px">VELDERR ADMIN</p>
+        <h1 style="font-family:var(--display);font-weight:400;font-size:36px;margin:0">Operations dashboard</h1>
+      </div>
+      <button class="signout" id="signOut">Sign out</button>
+    </div>
+    <p style="color:var(--muted)">Manage bookings, staffing, quotes and recorded payments.</p>
+
+    <div id="stats" class="stat-grid"></div>
+
+    <div class="cols">
+      <div>
+        <h2 style="font-family:var(--display);font-weight:400;font-size:24px">Bookings</h2>
+        <div id="bookings"></div>
+      </div>
+      <div>
+        <h2 style="font-family:var(--display);font-weight:400;font-size:24px">Staff roster</h2>
+        <form id="staffForm" style="margin-bottom:20px">
+          <div class="field"><label for="sn">Name</label><input id="sn" required></div>
+          <div class="field"><label for="sp">Phone</label><input id="sp" required></div>
+          <div class="field"><label for="sr">Role</label><input id="sr" value="Usher"></div>
+          <button class="btn primary full" type="submit">Add staff</button>
+        </form>
+        <div id="staff"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>

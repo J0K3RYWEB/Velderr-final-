@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Velderr | Professional Ushering Services</title>
+<meta name="description" content="Premium ushering, VIP management and event support in Kampala, Uganda. Get an instant package recommendation and request a booking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#home">
+    <span class="brand-mark">V</span>
+    <span class="brand-text"><b>VELDERR</b><small>Professional Ushering Services</small></span>
+  </a>
+  <button class="menu" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav id="nav">
+    <a href="#services">Services</a>
+    <a href="#packages">Packages</a>
+    <a href="#about">Why Velderr</a>
+    <a class="nav-cta" href="#booking">Request a booking</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">PROFESSIONAL · RELIABLE · IMPACTFUL</p>
+      <h1>Elevating<br><span>Experiences.</span></h1>
+      <p class="lead">Premium ushering and event support for conferences, weddings, corporate functions, launches and special occasions across Kampala and beyond.</p>
+      <div class="actions">
+        <a class="btn primary" href="#calculator">Get my package &amp; price</a>
+        <a class="btn ghost" href="tel:+256770961137">Call Velderr</a>
+      </div>
+      <div class="trust-row">
+        <span>✓ Trained &amp; disciplined team</span>
+        <span>✓ Client-focused</span>
+        <span>✓ 50–2000 guest events</span>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/team-outdoor.jpg" alt="Velderr event ushering team standing in formation outdoors">
+    </div>
+  </section>
+
+  <!-- CALCULATOR — the page's signature interaction -->
+  <section id="calculator" class="calc-section">
+    <div class="calc-card">
+      <p class="eyebrow calc-eyebrow">INSTANT QUOTE</p>
+      <h2 class="calc-title">How many guests are you expecting?</h2>
+      <div class="calc-readout">
+        <span id="guestNum">300</span>
+        <span class="calc-unit">guests</span>
+      </div>
+      <input type="range" id="guestSlider" min="50" max="2000" step="10" value="300" aria-label="Number of guests">
+      <div class="calc-scale"><span>50</span><span>2000+</span></div>
+      <div class="calc-result">
+        <div class="calc-result-left">
+          <p class="calc-pkg-name" id="resPkgName">Gold Package</p>
+          <p class="calc-pkg-meta" id="resPkgMeta">15 ushers · 251–500 guests</p>
+        </div>
+        <p class="calc-price" id="resPrice">2,000,000 UGX</p>
+      </div>
+      <a class="btn primary full" href="#booking" id="calcCta">Book the Gold Package</a>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="section-head">
+      <p class="eyebrow">WHAT WE DO</p>
+      <h2>Service with intention.</h2>
+      <p>Every touchpoint is designed to make guests feel welcomed, guided and respected.</p>
+    </div>
+    <div id="serviceGrid" class="cards"></div>
+  </section>
+
+  <section id="packages" class="section packages-section">
+    <div class="section-head">
+      <p class="eyebrow">RATE CARD</p>
+      <h2>Every package, side by side.</h2>
+      <p>Pricing scales with your guest count and usher team size. Tap a package to carry it into your booking request.</p>
+    </div>
+    <div id="packageGrid" class="package-grid"></div>
+  </section>
+
+  <section id="about" class="split section">
+    <div>
+      <p class="eyebrow">WHY VELDERR</p>
+      <h2>Professional presence. Seamless execution.</h2>
+      <p class="lead">Our team is trained to deliver calm, polished and guest-focused service while supporting the operational flow of your event.</p>
+      <div class="checks">
+        <span>✓ Trained &amp; disciplined team</span>
+        <span>✓ Time conscious &amp; reliable</span>
+        <span>✓ Client-focused approach</span>
+        <span>✓ Premium presentation</span>
+      </div>
+    </div>
+    <img src="assets/team-service.jpg" alt="Velderr ushers assisting guests at an event">
+  </section>
+
+  <section id="booking" class="section booking">
+    <div class="section-head">
+      <p class="eyebrow">BOOK VELDERR</p>
+      <h2>Tell us about your event.</h2>
+      <p>Send a request and our team can follow up with a quotation and staffing plan.</p>
+    </div>
+    <form id="bookingForm" class="booking-form">
+      <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" required></div>
+      <div class="field"><label for="f-phone">Phone number</label><input id="f-phone" name="phone" required placeholder="+256..."></div>
+      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email"></div>
+      <div class="field"><label for="f-date">Event date</label><input id="f-date" name="date" type="date" required></div>
+      <div class="field"><label for="f-time">Event time</label><input id="f-time" name="time" type="time"></div>
+      <div class="field"><label for="f-location">Event location</label><input id="f-location" name="location" placeholder="Kampala, venue name"></div>
+      <div class="field"><label for="f-guests">Expected guests</label><input id="f-guests" name="guests" type="number" min="1"></div>
+      <div class="field"><label for="f-service">Service</label><select id="f-service" name="service" required></select></div>
+      <div class="field"><label for="f-package">Package</label><select id="f-package" name="package"></select></div>
+      <div class="field"><label for="f-budget">Estimated budget (UGX)</label><input id="f-budget" name="budget" type="number" min="0"></div>
+      <div class="field full"><label for="f-message">Additional details</label><textarea id="f-message" name="message" rows="4"></textarea></div>
+      <button class="btn primary full" type="submit">Submit booking request</button>
+      <p id="result" class="result" role="status"></p>
+    </form>
+    <div class="contact-strip">
+      <a href="tel:+256770961137">+256 770 961 137</a>
+      <a href="tel:+256708068874">+256 708 068 874</a>
+      <a href="mailto:velderr256@gmail.com">velderr256@gmail.com</a>
+      <span>Kampala, Uganda</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="brand">
+    <span class="brand-mark">V</span>
+    <span class="brand-text"><b>VELDERR</b><small>Professional. Reliable. Impactful.</small></span>
+  </div>
+  <a class="admin-link" href="admin.html">Staff &amp; admin sign in →</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
