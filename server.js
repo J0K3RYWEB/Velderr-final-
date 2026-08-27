@@ -8,7 +8,7 @@ import { v4 as uuid } from 'uuid';
 
 // ---------- storage ----------
 const root = path.dirname(fileURLToPath(import.meta.url));
-const dir = path.join(root, '..', 'data');
+const dir = path.join(root, 'data');
 fs.mkdirSync(dir, { recursive: true });
 
 const files = { bookings: 'bookings.json', staff: 'staff.json', quotes: 'quotes.json', payments: 'payments.json' };
