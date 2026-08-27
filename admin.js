@@ -1,4 +1,4 @@
-const API = window.VELDERR_API_BASE || 'http://localhost:4000/api';
+const API = window.VELDERR_API_BASE || 'https://velderr-api.onrender.com/api';
 const $ = (sel) => document.querySelector(sel);
 let token = sessionStorage.getItem('velderrToken') || '';
 
